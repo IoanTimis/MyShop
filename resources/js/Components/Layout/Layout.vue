@@ -35,4 +35,7 @@ import { Link } from "@inertiajs/vue3";
     <main className="min-h-[calc(100vh-89px)]">
         <slot></slot>
     </main>
+    <footer class="bg-black text-white text-center p-4">
+        &copy; 2025 Travellist. All rights reserved.
+    </footer>
 </template>

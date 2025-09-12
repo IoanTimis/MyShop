@@ -23,7 +23,7 @@ class HandleInertiaRequests extends Middleware
     }
 
     /**
-     * Define the props that are shared by default.
+     * Define the props that are shared by default. ( toate paginile vad auth.user)
      *
      * @return array<string, mixed>
      */
