@@ -9,8 +9,8 @@ import { Link } from "@inertiajs/vue3";
             <a href="/">
                 <img
                     alt="Logo"
-                    src=""
-                    class="ms-0 md:ms-5 h-auto lg:h-24 w-auto aspect-video"
+                    src="/images/logo.png"
+                    class="h-10 w-10 object-contain"
                 />
             </a>
         </div>
