@@ -12,6 +12,16 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('Public/About');
+})->name('about');
+
+Route::get('/contact', function () {
+    return Inertia::render('Public/Contact');
+})->name('contact');
+
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard/Index');
 })->middleware(['auth', 'verified'])->name('dashboard');
