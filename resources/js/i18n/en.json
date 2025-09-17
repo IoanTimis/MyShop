@@ -1,9 +1,27 @@
 {
-  "login": "Login",
-  "register": "Register",
-  "services": "Services",
-  "home": "Home",
-  "about": "About",
-  "contact": "Contact",
-  "copyright": "© 2024 Travellist. All rights reserved."
+    "nav": {
+        "login": "Login",
+        "register": "Register",
+        "services": "Services",
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "© 2025 MyShop. All rights reserved.",
+        "section_titles": { 
+            "services": "Services",
+            "orders_and_delivery": "Orders and delivery",
+            "client_support": "Client support"
+        },
+        "links": { 
+            "i_want_to_sell_on_myshop": "I want to sell on MyShop", 
+            "my_myshop_account": "My MyShop account", 
+            "product_return_form": "Product return form", 
+            "guarantees_and_service": "Guarantees and service", 
+            "30_days_right_of_return": "30 days right of return", 
+            "opening_the_package_upon_delivery": "Opening the package upon delivery",
+            "order_and_delivery": "Order and delivery"
+            }
+    }
 }

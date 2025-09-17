@@ -7,42 +7,65 @@ const messages = { en, ro };
 const STORAGE_KEY = 'app_locale';
 
 const state = reactive({
-  locale: localStorage.getItem(STORAGE_KEY) || 'ro',
+    locale: localStorage.getItem(STORAGE_KEY) || 'ro',
 });
 
 export function useI18n() {
-  const t = (key) => {
-    const m = messages[state.locale] || {};
-    return m[key] ?? key;
-  };
+    const resolveKey = (obj, key) => {
+        if (!obj) return undefined;
+        if (Object.prototype.hasOwnProperty.call(obj, key)) return obj[key];
+        return key.split('.').reduce((acc, part) => (acc && acc[part] !== undefined) ? acc[part] : undefined, obj);
+    };
 
-  const locale = computed(() => state.locale);
+    const t = (key) => {
+        const m = messages[state.locale] || {};
+        const fallback = messages['en'] || {};
+        const val = resolveKey(m, key);
+        if (val !== undefined) return val;
+        const val2 = resolveKey(fallback, key);
+        return val2 !== undefined ? val2 : key;
+    };
 
-  function setLocale(l) {
-    if (messages[l]) {
-      state.locale = l;
-      try { localStorage.setItem(STORAGE_KEY, l) } catch (e) { /* ignore */ }
+    const locale = computed(() => state.locale);
+
+    function setLocale(l) {
+        if (messages[l]) {
+        state.locale = l;
+        try { localStorage.setItem(STORAGE_KEY, l) } catch (e) { /* ignore */ }
+        }
     }
-  }
 
-  return { t, locale, setLocale };
+    return { t, locale, setLocale };
 }
 
 // Vue plugin install so it can be used globally via app.use(i18n)
 export function install(app) {
-  const api = {
-    t: (key) => messages[state.locale]?.[key] ?? key,
-    locale: computed(() => state.locale),
-    setLocale: (l) => {
-      if (messages[l]) {
-        state.locale = l;
-        try { localStorage.setItem(STORAGE_KEY, l) } catch (e) {}
-      }
-    }
-  };
+    const resolveKey = (obj, key) => {
+        if (!obj) return undefined;
+        if (Object.prototype.hasOwnProperty.call(obj, key)) return obj[key];
+        return key.split('.').reduce((acc, part) => (acc && acc[part] !== undefined) ? acc[part] : undefined, obj);
+    };
 
-  app.config.globalProperties.$t = api.t;
-  app.provide('i18n', api);
+    const api = {
+        t: (key) => {
+            const m = messages[state.locale] || {};
+            const fallback = messages['en'] || {};
+            const val = resolveKey(m, key);
+            if (val !== undefined) return val;
+            const val2 = resolveKey(fallback, key);
+            return val2 !== undefined ? val2 : key;
+        },
+        locale: computed(() => state.locale),
+        setLocale: (l) => {
+        if (messages[l]) {
+            state.locale = l;
+            try { localStorage.setItem(STORAGE_KEY, l) } catch (e) {}
+        }
+        }
+    };
+
+    app.config.globalProperties.$t = api.t;
+    app.provide('i18n', api);
 }
 
 export default { install };

@@ -2,6 +2,7 @@
 import { Link } from "@inertiajs/vue3";
 import { ref } from 'vue';
 import { useI18n } from '@/i18n';
+import Footer from '@/Components/Footer.vue';
 
 const { t, locale, setLocale } = useI18n();
 const showLang = ref(false);
@@ -48,32 +49,5 @@ const showLang = ref(false);
     <main class="min-h-[calc(100vh-89px)]">
         <slot></slot>
     </main>
-    <footer class="bg-black text-white py-6 mt-10">
-        <div class="container mx-auto px-4">
-                <!-- TODO: footer asemantor cu emag (component) -->
-            <div class="flex flex-row justify-between align-items-center">
-                <div class="flex flex-col space-y-2 mt-4 md:mt-0">
-                    <span>Servicii</span>
-                    <Link href="/" class="hover:underline">Home</Link>
-                    <Link href="/about" class="hover:underline">About</Link>
-                    <Link href="/contact" class="hover:underline">Contact</Link>
-                </div>
-                 <div class="flex flex-col space-y-2 mt-4 md:mt-0">
-                    <Link href="/" class="hover:underline">Home</Link>
-                    <Link href="/about" class="hover:underline">About</Link>
-                    <Link href="/contact" class="hover:underline">Contact</Link>
-                </div>
-                 <div class="flex flex-col space-y-2 mt-4 md:mt-0">
-                    <Link href="/" class="hover:underline">Home</Link>
-                    <Link href="/about" class="hover:underline">About</Link>
-                    <Link href="/contact" class="hover:underline">Contact</Link>
-                </div>
-                 <div class="flex flex-col space-y-2 mt-4 md:mt-0">
-                    <Link href="/" class="hover:underline">Home</Link>
-                    <Link href="/about" class="hover:underline">About</Link>
-                    <Link href="/contact" class="hover:underline">Contact</Link>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <Footer />
 </template>
