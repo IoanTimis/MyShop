@@ -4,6 +4,7 @@
             "my_account": "Contul meu",
             "favorites": "Favorite",
             "cart": "Coș",
+            "search": "Căutare",
             "logout": "Deconectare"
         },
         "search_placeholder": "Începeți să tastați pentru a căuta..."

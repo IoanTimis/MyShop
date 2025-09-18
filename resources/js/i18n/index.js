@@ -7,7 +7,7 @@ const messages = { en, ro };
 const STORAGE_KEY = 'app_locale';
 
 const state = reactive({
-    locale: localStorage.getItem(STORAGE_KEY) || 'ro',
+    locale: localStorage.getItem(STORAGE_KEY) || 'en',
 });
 
 export function useI18n() {

@@ -4,6 +4,7 @@
             "my_account": "My Account",
             "favorites": "Favorites",
             "cart": "Cart",
+            "search": "Search",
             "logout": "Logout"
         },
         "search_placeholder": "Start typing to search..."
