@@ -10,21 +10,21 @@ const showLang = ref(false);
 <template>
     <!-- TODO: Header component -->
     <header
-        class="bg-black sticky top-0 flex items-center justify-between gap-4 border-b border-gray-700 px-2 py-4 sm:px-6 md:px-8 lg:px-20 z-[99999]"
+        class="bg-white sticky top-0 flex items-center justify-between gap-4 border-b border-gray-700 px-2 py-2 sm:px-6 md:px-8 lg:px-20 z-[99999]"
     >
         <div>
             <a href="/">
                 <img
                     alt="Logo"
-                    src="/images/logo.png"
-                    class="h-10 w-10 object-contain"
+                    src="/images/logo2.png"
+                    class="h-16 w-20"
                 />
             </a>
         </div>
         <div class="flex items-center justify-center gap-5">
             <!-- small language toggle -->
             <div class="relative">
-                <button @click.prevent="showLang = !showLang" class="text-white px-2 py-1 border rounded">
+                <button @click.prevent="showLang = !showLang" class="text-black px-2 py-1 border rounded">
                     {{ locale }}
                 </button>
                 <div v-if="showLang" class="absolute right-0 mt-2 bg-white text-black rounded shadow-lg">

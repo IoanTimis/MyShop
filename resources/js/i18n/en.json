@@ -1,11 +1,12 @@
 {
     "nav": {
-        "login": "Login",
-        "register": "Register",
-        "services": "Services",
-        "home": "Home",
-        "about": "About",
-        "contact": "Contact"
+        "links": {
+            "my_account": "My Account",
+            "favorites": "Favorites",
+            "cart": "Cart",
+            "logout": "Logout"
+        },
+        "search_placeholder": "Start typing to search..."
     },
     "footer": {
         "copyright": "© 2025 MyShop. All rights reserved.",

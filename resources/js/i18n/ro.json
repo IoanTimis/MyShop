@@ -1,11 +1,12 @@
 {
     "nav": {
-        "login": "Autentificare",
-        "register": "Înregistrare",
-        "services": "Servicii",
-        "home": "Acasă",
-        "about": "Despre",
-        "contact": "Contact"
+        "links": {
+            "my_account": "Contul meu",
+            "favorites": "Favorite",
+            "cart": "Coș",
+            "logout": "Deconectare"
+        },
+        "search_placeholder": "Începeți să tastați pentru a căuta..."
     },
     "footer": {
         "copyright": "© 2025 MyShop. Toate drepturile rezervate.",

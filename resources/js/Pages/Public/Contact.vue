@@ -3,19 +3,20 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Contact" />
+    <Head title="Contact — MyShop" />
     <div class="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">
         <div class="max-w-2xl text-center">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Contact Us</h1>
-            <p class="text-gray-600 mb-6">
-                We'd love to hear from you! Whether you have questions, feedback, or need assistance, our team is here to help.
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Contact MyShop</h1>
+            <p class="text-gray-600 mb-4">
+                Ai întrebări sau ai nevoie de ajutor? Echipa MyShop este aici pentru tine.
             </p>
-            <p class="text-gray-600 mb-6">
-                You can reach us via email at <a href="mailto:contact@example.com">contact@example.com</a>.
-                Alternatively, feel free to fill out our contact form on the website, and we'll get back to you as soon as possible.
-            </p>
-            <p class="text-gray-600">
-                Thank you for choosing Travellist. We look forward to assisting you on your travel journey!
+            <div class="text-left bg-white rounded-lg shadow p-6">
+                <p class="text-gray-700 mb-2"><strong>Email:</strong> support@myshop.local</p>
+                <p class="text-gray-700 mb-2"><strong>Program suport:</strong> Luni–Vineri, 09:00–17:00</p>
+                <p class="text-gray-700 mb-0"><strong>Telefon:</strong> +40 123 456 789 (exemplu)</p>
+            </div>
+            <p class="text-gray-600 mt-6">
+                Pentru probleme legate de comenzi, te rugăm să ne trimiţi numărul comenzii în mesaj. Răspundem prompt!
             </p>
         </div>
     </div>
