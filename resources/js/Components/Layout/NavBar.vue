@@ -87,7 +87,7 @@ function clearSearch() {
         <div class="flex items-center gap-3">
             <!-- Desktop: icons + labels -->
             <nav class="hidden md:flex items-center gap-6">
-                <Link href="/account" class="flex items-center gap-2 text-gray-700 hover:text-black">
+                <Link href="/profile" class="flex items-center gap-2 text-gray-700 hover:text-black">
                     <UserIcon class="w-5 h-5" />
                     <span class="text-sm">{{ t('nav.links.my_account') }}</span>
                 </Link>
