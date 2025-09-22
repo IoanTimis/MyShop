@@ -1,80 +1,52 @@
-# Laravel Vue Tailwind Setup
+# MyShop — Online Store
 
-This repository contains a starter template for setting up a web application using Laravel, Vue.js, and Tailwind CSS.
+This repository contains the MyShop web application — an online store project currently in active development. The codebase uses Laravel on the backend, Inertia.js + Vue 3 on the frontend, Tailwind CSS for styles, and standard tooling (Composer, npm).
 
-## Features
+Status
+------
+This project is just getting started and is actively being developed. 
 
-- Laravel 11.x
-- Vue.js 3.x
-- Tailwind CSS 3.x
+Planned features
+----------------
+- Product catalogue: products, categories, images, descriptions, prices.
+- Search and filtering: full-text search, category filters, price ranges.
+- Pricing and stock management.
+- Cart and checkout flow (orders, shipping, payment integration).
+- Vendor and client workflows:
+  - Vendors can register/manage a store and add/update products.
+  - Clients can browse, add to cart, and purchase.
+- User dashboard: account area with order history, profile settings, and vendor dashboard for product management.
+- Admin dashboard: manage users, orders, products, and site settings.
+- Internationalization (i18n) — multi-language support.
+- Tests and CI: unit and feature tests, automated pipelines.
 
-## Requirements
+Current tech stack
+------------------
+- PHP (Laravel)
+- Inertia.js + Vue 3
+- Tailwind CSS
+- Composer + npm
 
-- PHP >= 8.2
-- Composer
-- Node.js & npm
-- Git
+Quick start (local)
+-------------------
+1. Copy environment and install dependencies
 
-## Setup Instructions
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://github.com/giauphan/laravel-vue-tailwind
-   ```
-   ## Navigate into the project directory
-   ```
-    cd laravel-vue-tailwind
-   ```
-## Install PHP dependencies
-```
+```bash
+cp .env.example .env
 composer install
-```
-## Install JavaScript dependencies
-```
 npm install
 ```
-## Compile assets
-```
-npm run dev
-```
-## Set up environment variables
 
-## Duplicate the ``.env.example file and rename it to .env.``
+2. Generate application key and run migrations
 
-## Generate an application key
-```
+```bash
 php artisan key:generate
-```
-## Configure your database connection in the .env file.
-
-## Run migrations (if using a database)
-```
 php artisan migrate
 ```
-## Start the development server
-```
+
+3. Build assets and run dev server
+
+```bash
+npm run dev
 php artisan serve
 ```
-
-Access your application
-
-Open your web browser and navigate to ``http://localhost:8000.``
-
-Deployment
-
-To deploy your application, you can use various hosting platforms such as:
-
-- [Heroku](https://www.heroku.com/)
-- [DigitalOcean](https://www.digitalocean.com/)
-- [Vercel](https://vercel.com/)
-
-Ensure that you set up appropriate deployment scripts and configurations for your chosen platform.
-
-Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-License 
-
-This project is open-sourced software licensed under the MIT license.
