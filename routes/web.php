@@ -1,16 +1,19 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Public/Home', [
-    'canLogin' => Route::has('login'),
-    'canRegister' => Route::has('register'),
-    ]);
+Route::get('/', [ProductController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    // vendor dashboard routes...
 });
+
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 Route::get('/about', function () {
     return Inertia::render('Public/About');
@@ -19,8 +22,6 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('Public/Contact');
 })->name('contact');
-
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard/Index');

@@ -1,10 +1,12 @@
 <script setup>
 import { Head } from "@inertiajs/vue3";
+import ProductCard from '@/Components/ProductCard.vue';
 
-defineProps({
+const props = defineProps({
     user: Object,
     canLogin: Boolean,
     canRegister: Boolean,
+    products: Object
 });
 </script>
 
@@ -34,6 +36,20 @@ defineProps({
                 <div class="bg-white p-4 rounded shadow">
                     <h2 class="font-semibold text-lg mb-2">Suport clienți</h2>
                     <p class="text-sm text-gray-600">Suntem aici să te ajutăm cu orice întrebare legată de comenzile tale.</p>
+                </div>
+            </section>
+
+            <section class="mt-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <ProductCard v-for="p in products.data" :key="p.id" :product="p" />
+                </div>
+
+                <!-- simple pagination -->
+                <div class="mt-6">
+                    <nav class="flex justify-center gap-2">
+                        <button v-if="products.prev_page_url" @click="$inertia.get(products.prev_page_url)" class="px-3 py-1 border rounded">Prev</button>
+                        <button v-if="products.next_page_url" @click="$inertia.get(products.next_page_url)" class="px-3 py-1 border rounded">Next</button>
+                    </nav>
                 </div>
             </section>
         </div>
